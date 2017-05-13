@@ -1,0 +1,45 @@
+author="Doctor Butts";
+gameType = coop;
+respawn = 5;
+onLoadMissionTime = 1;
+//loadScreen = fooddeliverysplash.paa;
+//overviewPicture = fooddeliverysplash.paa;
+overviewText = "Deliveries, support, Oh my!";
+enableDebugConsole = 1;
+saving = 0;
+
+class Header
+{
+	minPlayers = 1; //min # of players the mission supports
+	maxPlayers = 28; //max # of players the mission supports
+};
+class Params
+{
+	class TimeOfDay
+	{
+	title = "Time of Day";
+	texts[] = {"Moonrise","Full Moon","Dawn","Sunrise","Morning","Noon","Afternoon","Sunset","Dusk"};
+	values[] = {0.5,3,5,6,9,12,15,18,19};
+	default = 9;
+	function = "BIS_fnc_paramDaytime"; // (Optional) Function called when player joins, selected value is passed as an argument
+	isGlobal = 1; // (Optional) 1 to execute script / function locally for every player who joins, 0 to do it only on server
+	};
+};
+
+class CfgDebriefing
+{  
+	class End1
+	{
+		title = "Mission Success";
+		subtitle = "Factory Hideout has been cleared.";
+		description = "AAF hostiles have been removed from the area. Surely this time it will mean peace on Altis, for sure.";
+		//pictureBackground = "media\deadfood.jpg";
+	};
+	class End2
+	{	
+		title = "Mission Failure";
+		subtitle = "Blufor has been eliminated";
+		description = "Everyone died before the mission could be completed.";
+		//pictureBackground = "media\losttruck.jpg";
+	};
+};
